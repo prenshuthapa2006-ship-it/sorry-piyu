@@ -109,7 +109,6 @@ body {
 }
 
 .heart {
-  position: relative;
   width: 80px;
   height: 80px;
   background: linear-gradient(135deg, #ff6b9d, #ff4757);
@@ -118,6 +117,8 @@ body {
   animation: beat 1.5s ease-in-out infinite;
   cursor: pointer;
   box-shadow: 0 0 30px rgba(255, 71, 87, 0.5);
+  position: relative;
+  margin-left: calc(50% - 40px);
 }
 
 .heart::before,
@@ -130,8 +131,15 @@ body {
   border-radius: 50%;
 }
 
-.heart::before { left: -40px; }
-.heart::after { top: -40px; }
+.heart::before {
+  left: -40px;
+  top: 0;
+}
+
+.heart::after {
+  left: 0;
+  top: -40px;
+}
 
 @keyframes beat {
   0%, 100% { transform: rotate(45deg) scale(1); }
